@@ -1,2 +1,4 @@
 # MocliaDaemon-Shell
-A Script to enable mirai daemon using cronie.
+A simple script to protect mirai process.
+# How to use
+//To do
