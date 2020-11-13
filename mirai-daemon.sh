@@ -6,13 +6,13 @@
 # All rights reserved.
 # If you have any problems or ideas,
 # Feel free to talk to us on https://github.com/Moclia-Developer-Team/MocliaDaemon-Shell
-
+MIRAI_FOLDER=
 # Make sure to move mirai's folder under ~/mirai, or you can modify the specific folder.
-cd ~/mirai
+cd ~/${MIRAI_FOLDER}
 
 # This is the variable for mirai process's name. Edit execute path as you wish.
-PROCESS=mirai
-EXECUTE_MIRAI=
+PROCESS=
+EXECUTE=
 
 while true ; do
 # Use ps to aquire the total amount of process mirai.
@@ -23,14 +23,14 @@ while true ; do
 		echo "Terminated ${PROCESS}."
 
 # You can edit start option here.
-		${EXECUTE_MIRAI}
+		${EXECUTE}
 
 	elif [ "${NUMBER}" -gt "1" ]; then
 		echo "Multiple instances detected. Will reboot ${PROCESS}."
 		killall -9 ${PROCESS}
 
 # Again, edit the option if you needed.
-		${EXECUTE_MIRAI}
+		${EXECUTE}
 	fi
 
 # Aquire zombie process:
@@ -38,7 +38,7 @@ while true ; do
 
 	if [ "${NUMBER_STAT}" -gt "0" ]; then
 		killall -9 ${PROCESS}
-		${EXECUTE_MIRAI}
+		${EXECUTE}
 	fi
 done
 
